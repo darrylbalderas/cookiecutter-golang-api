@@ -33,7 +33,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	port := "8000"
+	port := "{{ cookiecutter.project_port }}"
 	http.HandleFunc("/", handler)
 	log.Printf("Server is running on http://0.0.0.0:%s\n", port)
 	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
